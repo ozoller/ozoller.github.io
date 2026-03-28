@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellness & Massage | Tamm</title>
+    <title>Melanie’s Massage Studio | Tamm</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -14,9 +14,7 @@
             --secondary-text: #86868b;
         }
 
-        /* Scroll Snapping Setup */
         html {
-            scroll-snap-type: y mandatory;
             scroll-behavior: smooth;
         }
 
@@ -27,26 +25,11 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        /* Jede Sektion füllt genau den Bildschirm */
-        section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            scroll-snap-align: start;
-            padding: 0 20px;
-            box-sizing: border-box;
-            position: relative;
         }
 
         /* Navigation */
         nav {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             position: fixed;
@@ -73,36 +56,52 @@
             letter-spacing: 0.5px;
         }
 
-        /* Typografie & Animation */
-        h1, h2 {
-            font-size: clamp(38px, 8vw, 72px);
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
+        /* Jede Sektion bildschirmfüllend */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            box-sizing: border-box;
+        }
+
+        .bg-grey { background-color: var(--secondary-bg); }
+
+        /* Animationen beim Scrollen */
+        .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease-out;
         }
 
-        .sub-text {
-            font-size: clamp(18px, 3vw, 26px);
-            color: var(--secondary-text);
-            max-width: 700px;
-            margin-bottom: 40px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease-out 0.2s;
-        }
-
-        /* Sichtbare Klasse für Animation */
-        .visible h1, .visible h2, .visible .sub-text, .visible .card-container {
+        .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Spezielle Sektionen */
-        .bg-grey { background-color: var(--secondary-bg); }
+        h1 {
+            font-size: clamp(40px, 8vw, 72px);
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        h2 {
+            font-size: clamp(32px, 6vw, 56px);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .sub-text {
+            font-size: clamp(18px, 3vw, 24px);
+            color: var(--secondary-text);
+            max-width: 700px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+        }
 
         /* Button */
         .btn {
@@ -118,73 +117,117 @@
             transition: all 0.3s;
         }
 
-        .btn:hover { transform: scale(1.05); opacity: 0.9; }
+        .btn:hover { transform: scale(1.05); }
 
         /* Kontaktbox */
         #booking-box {
             display: none;
-            margin-top: 30px;
-            padding: 30px;
+            margin-top: 40px;
+            padding: 40px;
             background: white;
-            border-radius: 24px;
+            border-radius: 28px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            max-width: 500px;
         }
 
-        /* Footer klein */
+        .address-details {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
         footer {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
+            margin-top: auto;
+            padding: 40px 20px;
             font-size: 11px;
             color: var(--secondary-text);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
     </style>
 </head>
 <body>
 
 <nav>
     <div class="nav-content">
-        <a href="#hero">Home</a>
-        <a href="#massage-1h">Massage</a>
-        <a href="#schroepfen">Schröpfen</a>
-        <a href="#kiefer">Kiefer</a>
+        <a href="#hero">Start</a>
+        <a href="#massage">Massage</a>
+        <a href="#special">Special</a>
         <a href="#kontakt">Buchen</a>
     </div>
 </nav>
 
 <section id="hero">
-    <h1>Entspannung.<br>In ihrer reinsten Form.</h1>
-    <p class="sub-text">Ganzheitliche Behandlungen für Ihr Wohlbefinden in Tamm.</p>
-    <a href="#massage-1h" class="btn">Entdecken</a>
+    <div class="reveal">
+        <h1>Entspannung.<br>In ihrer reinsten Form.</h1>
+        <p class="sub-text">Willkommen bei Melanie’s Massage Studio.<br>Ihre Auszeit in Tamm.</p>
+        <a href="#massage" class="btn">Angebot ansehen</a>
+    </div>
 </section>
 
-<section id="massage-1h" class="bg-grey">
-    <h2>Zeit für Sie.</h2>
-    <p class="sub-text">Wählen Sie zwischen einer intensiven Stunde (65 €) oder einer gezielten 30-Minuten-Behandlung (35 €).</p>
+<section id="massage" class="bg-grey">
+    <div class="reveal">
+        <h2>Zeit für Regeneration.</h2>
+        <p class="sub-text">
+            <strong>Klassische Massage (1 Std.)</strong> — 65 €<br>
+            Vollständige Entspannung für den gesamten Körper.<br><br>
+            <strong>Klassische Massage (30 Min.)</strong> — 35 €<br>
+            Gezielte Hilfe bei akuten Verspannungen.
+        </p>
+    </div>
 </section>
 
-<section id="schroepfen">
-    <h2>Schröpfen.</h2>
-    <p class="sub-text">Traditionelle Methode zur Förderung der Durchblutung und tiefen Lockerung des Gewebes.</p>
+<section id="special">
+    <div class="reveal">
+        <h2>Besondere Anwendungen.</h2>
+        <p class="sub-text">
+            <strong>Schröpfen</strong><br>
+            Fördert die Durchblutung und löst tiefsitzende Blockaden.<br><br>
+            <strong>Kiefermassage</strong><br>
+            Spezielle Entspannung der Gesichtsmuskulatur (ideal bei CMD).
+        </p>
+    </div>
 </section>
 
-<section id="kiefer" class="bg-grey">
-    <h2>Kiefermassage.</h2>
-    <p class="sub-text">Spezielle Techniken zur Entspannung der Muskulatur – ideal bei CMD oder Stress.</p>
-</section>
+<section id="kontakt" class="bg-grey">
+    <div class="reveal">
+        <h2>Ihre Auszeit beginnt hier.</h2>
+        <p class="sub-text">Klicken Sie unten, um die Details für Ihre Buchung anzuzeigen.</p>
+        <button class="btn" onclick="revealAddress()">Termin vereinbaren</button>
 
-<section id="kontakt">
-    <h2>Bereit für Ihre Auszeit?</h2>
-    <button class="btn" onclick="revealAddress()">Termin vereinbaren</button>
-    
-    <div id="booking-box">
-        <p><strong>Melanie’s Massage Studio</strong><br>
-        Alleenstraße 91, 71732 Tamm</p>
-        <p>E-Mail: <a href="mailto:melaniezoller@hotmail.com" style="color:var(--accent-color); text-decoration:none;">melaniezoller@hotmail.com</a></p>
+        <div id="booking-box">
+            <div class="address-details">
+                <p><strong>Melanie’s Massage Studio</strong><br>
+                Alleenstraße 91, 71732 Tamm</p>
+                <p>E-Mail: <a href="mailto:melaniezoller@hotmail.com" style="color:var(--accent-color); text-decoration:none;">melaniezoller@hotmail.com</a></p>
+                <p><small>Termine nach individueller Vereinbarung.</small></p>
+            </div>
+        </div>
     </div>
 
     <footer>
-        MELANIE'S MASSAGE STUDIO &copy; 2026 | <a href="#" style="color:
+        MELANIE'S MASSAGE STUDIO &copy; 2026 | <a href="#" style="color:inherit; text-decoration:none;">Impressum</a>
+    </footer>
+</section>
+
+<script>
+    function revealAddress() {
+        document.getElementById("booking-box").style.display = "block";
+        window.scrollBy(0, 300);
+    }
+
+    // Beobachtet das Scrollen und macht Text sichtbar
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
