@@ -25,6 +25,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             -webkit-font-smoothing: antialiased;
+            text-align: center; /* Globale Zentrierung für alle Texte */
         }
 
         /* Navigation */
@@ -63,9 +64,9 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
             padding: 80px 20px;
             box-sizing: border-box;
+            width: 100%;
         }
 
         .bg-grey { background-color: var(--secondary-bg); }
@@ -74,6 +75,10 @@
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Zentriert Inhalte innerhalb der Reveal-Box */
+            width: 100%;
         }
 
         .reveal.visible {
@@ -86,12 +91,14 @@
             font-weight: 600;
             margin-bottom: 20px;
             letter-spacing: -0.03em;
+            width: 100%;
         }
 
         h2 {
             font-size: clamp(32px, 6vw, 52px);
             font-weight: 600;
             margin-bottom: 20px;
+            width: 100%;
         }
 
         .sub-text {
@@ -100,6 +107,8 @@
             max-width: 800px;
             line-height: 1.5;
             margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Button */
@@ -128,12 +137,12 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.05);
             max-width: 450px;
             width: 100%;
-            text-align: center;
         }
 
         .address-details {
             font-size: 18px;
             line-height: 1.8;
+            text-align: center;
         }
 
         footer {
@@ -144,7 +153,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             width: 100%;
-            text-align: center;
         }
     </style>
 </head>
@@ -171,9 +179,9 @@
     <div class="reveal">
         <h2>Gezielte Schmerzlinderung.</h2>
         <p class="sub-text">
-            <strong>Klassische Massage (1 Std.)</strong> — 65 €<br>
+            <strong>Klassische Massage (1 Std.)</strong> — 60 €<br>
             Tiefenwirksame Behandlung zur Regeneration der Muskulatur und Lösung hartnäckiger Blockaden.<br><br>
-            <strong>Klassische Massage (30 Min.)</strong> — 35 €<br>
+            <strong>Klassische Massage (30 Min.)</strong> — 30 €<br>
             Fokussierte Problembehandlung bei akuten körperlichen Beschwerden.
         </p>
     </div>
