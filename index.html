@@ -82,23 +82,23 @@
         }
 
         h1 {
-            font-size: clamp(40px, 8vw, 72px);
+            font-size: clamp(38px, 8vw, 68px);
             font-weight: 600;
             margin-bottom: 20px;
             letter-spacing: -0.03em;
         }
 
         h2 {
-            font-size: clamp(32px, 6vw, 56px);
+            font-size: clamp(32px, 6vw, 52px);
             font-weight: 600;
             margin-bottom: 20px;
         }
 
         .sub-text {
-            font-size: clamp(18px, 3vw, 24px);
+            font-size: clamp(18px, 3vw, 22px);
             color: var(--secondary-text);
-            max-width: 700px;
-            line-height: 1.4;
+            max-width: 800px;
+            line-height: 1.5;
             margin-bottom: 40px;
         }
 
@@ -121,14 +121,14 @@
         /* Kontaktbox Zentriert */
         #booking-box {
             display: none;
-            margin: 40px auto 0 auto; /* Zentriert die Box nach außen */
+            margin: 40px auto 0 auto;
             padding: 40px;
             background: white;
             border-radius: 28px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.05);
             max-width: 450px;
             width: 100%;
-            text-align: center; /* Zentriert den Text innen */
+            text-align: center;
         }
 
         .address-details {
@@ -161,40 +161,40 @@
 
 <section id="hero">
     <div class="reveal">
-        <h1>Entspannung.<br>In ihrer reinsten Form.</h1>
-        <p class="sub-text">Willkommen bei Melanie’s Massage Studio.<br>Ihre Auszeit in Tamm.</p>
+        <h1>Mehr als Entspannung.<br>Wohlbefinden für Ihren Körper.</h1>
+        <p class="sub-text">Melanie’s Massage Studio in Tamm.<br>Gezielte Behandlung von körperlichen Beschwerden, Verspannungen und Blockaden für eine schmerzfreie Beweglichkeit.</p>
         <a href="#massage" class="btn">Angebot ansehen</a>
     </div>
 </section>
 
 <section id="massage" class="bg-grey">
     <div class="reveal">
-        <h2>Zeit für Regeneration.</h2>
+        <h2>Gezielte Schmerzlinderung.</h2>
         <p class="sub-text">
             <strong>Klassische Massage (1 Std.)</strong> — 65 €<br>
-            Vollständige Entspannung für den gesamten Körper.<br><br>
+            Tiefenwirksame Behandlung zur Regeneration der Muskulatur und Lösung hartnäckiger Blockaden.<br><br>
             <strong>Klassische Massage (30 Min.)</strong> — 35 €<br>
-            Gezielte Hilfe bei akuten Verspannungen.
+            Fokussierte Problembehandlung bei akuten körperlichen Beschwerden.
         </p>
     </div>
 </section>
 
 <section id="special">
     <div class="reveal">
-        <h2>Besondere Anwendungen.</h2>
+        <h2>Spezialisierte Therapie.</h2>
         <p class="sub-text">
             <strong>Schröpfen</strong><br>
-            Fördert die Durchblutung und löst tiefsitzende Blockaden.<br><br>
+            Intensive Methode zur Behebung von Gewebeverklebungen und zur Aktivierung der Selbstheilungskräfte.<br><br>
             <strong>Kiefermassage</strong><br>
-            Spezielle Entspannung der Gesichtsmuskulatur (ideal bei CMD).
+            Entlastung bei CMD-Symptomen, Kopfschmerz und Verspannungen im Gesichtsbereich.
         </p>
     </div>
 </section>
 
 <section id="kontakt" class="bg-grey">
     <div class="reveal">
-        <h2>Ihre Auszeit beginnt hier.</h2>
-        <p class="sub-text">Klicken Sie unten, um die Details für Ihre Buchung anzuzeigen.</p>
+        <h2>Ihr Weg zur Besserung.</h2>
+        <p class="sub-text">Vereinbaren Sie jetzt Ihren Termin für eine individuelle Behandlung Ihrer körperlichen Anliegen.</p>
         <button class="btn" onclick="revealAddress()">Termin vereinbaren</button>
 
         <div id="booking-box">
@@ -216,7 +216,6 @@
     function revealAddress() {
         var box = document.getElementById("booking-box");
         box.style.display = "block";
-        // Kleiner Delay damit der Browser Zeit zum Rendern hat, bevor er scrollt
         setTimeout(function() {
             box.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 100);
