@@ -3,61 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellness & Massage | Dein Name</title>
+    <title>Massage Studio | Pur & Entspannt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f9f7f2; }
-        header { background: #8da399; color: white; padding: 2rem; text-align: center; }
-        nav { background: #7a8d84; padding: 0.5rem; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .container { max-width: 800px; margin: 2rem auto; padding: 0 20px; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h2 { color: #8da399; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .price-list { list-style: none; padding: 0; }
-        .price-list li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #ccc; }
-        footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #777; }
-        .cta-button { display: inline-block; background: #8da399; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1d1d1f;
+            --accent-color: #0071e3;
+            --secondary-text: #86868b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation wie bei Apple */
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            padding: 12px 0;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 12px;
+            margin: 0 20px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover { opacity: 1; }
+
+        /* Hero Section - Das große Statement */
+        .hero {
+            padding-top: 120px;
+            text-align: center;
+            background: #f5f5f7;
+            padding-bottom: 80px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -0.005em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: var(--secondary-text);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* Sektionen */
+        .section {
+            max-width: 980px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Leistungen als Apple-Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #f5f5f7;
+            border-radius: 18px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: scale(1.02); }
+
+        .card h3 { font-size: 21px; margin-top: 0; }
+        .card .price { font-weight: 600; color: var(--accent-color); font-size: 18px; }
+
+        /* Button im Apple Style */
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-weight: 400;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover { background: #0077ed; }
+
+        footer {
+            background: #f5f5f7;
+            padding: 50px 20px;
+            font-size: 12px;
+            color: var(--secondary-text);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Massage & Wohlbefinden</h1>
-    <p>Zeit für Entspannung und neue Energie</p>
-</header>
-
 <nav>
-    <a href="#angebot">Angebot</a>
-    <a href="#ueber-mich">Über mich</a>
-    <a href="#kontakt">Kontakt</a>
+    <div class="nav-content">
+        <a href="#home">Home</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#kontakt">Kontakt</a>
+    </div>
 </nav>
 
-<div class="container">
-    <section id="angebot">
-        <h2>Mein Angebot</h2>
-        <ul class="price-list">
-            <li><span>Klassische Massage (60 Min)</span> <span>65 €</span></li>
-            <li><span>Aromaöl-Massage (90 Min)</span> <span>90 €</span></li>
-            <li><span>Rückenmassage (30 Min)</span> <span>35 €</span></li>
-            <li><span>Hot Stone Massage (60 Min)</span> <span>75 €</span></li>
-        </ul>
-    </section>
+<div class="hero" id="home">
+    <h1>Entspannung. Neu definiert.</h1>
+    <p>Erlebe professionelle Massagen in einer Atmosphäre der absoluten Ruhe.</p>
+    <a href="#kontakt" class="btn">Termin anfragen</a>
+</div>
 
-    <section id="ueber-mich">
-        <h2>Über mich</h2>
-        <p>Willkommen! Ich bin [Name einfügen], zertifizierte Masseurin mit Leidenschaft für ganzheitliche Entspannung. In meiner Praxis schaffe ich einen Raum, in dem Körper und Geist zur Ruhe kommen können.</p>
-    </section>
+<div class="section" id="leistungen">
+    <h2>Wähle deine Auszeit.</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Deep Tissue</h3>
+            <p>Intensive Massage zur Lockerung tiefer Verspannungen.</p>
+            <p class="price">60 Min. — 75 €</p>
+        </div>
+        <div class="card">
+            <h3>Swedish Flow</h3>
+            <p>Klassische Entspannung für den ganzen Körper.</p>
+            <p class="price">60 Min. — 65 €</p>
+        </div>
+        <div class="card">
+            <h3>Hot Stone</h3>
+            <p>Wohltuende Wärme durch vulkanisches Gestein.</p>
+            <p class="price">90 Min. — 95 €</p>
+        </div>
+    </div>
+</div>
 
-    <section id="kontakt">
-        <h2>Kontakt & Termine</h2>
-        <p>Möchtest du einen Termin vereinbaren? Ich freue mich auf deine Nachricht!</p>
-        <p><strong>📍 Adresse:</strong> Musterstraße 1, 12345 Stadt</p>
-        <p><strong>📞 Telefon:</strong> 0123 / 456789</p>
-        <p><strong>✉️ E-Mail:</strong> info@deine-domain.de</p>
-        <a href="mailto:info@deine-domain.de" class="cta-button">Jetzt Termin anfragen</a>
-    </section>
+<div class="section" id="kontakt" style="text-align: center;">
+    <h2>Wir freuen uns auf dich.</h2>
+    <p>Musterstraße 1, 12345 Berlin</p>
+    <p>Telefon: 0123 / 456 789</p>
+    <a href="mailto:hallo@studio.de" class="btn">E-Mail schreiben</a>
 </div>
 
 <footer>
-    &copy; 2026 Massagepraxis [Dein Name] | <a href="#">Impressum</a>
+    <p>&copy; 2026 Massage Studio. Alle Rechte vorbehalten. | <a href="#" style="color: inherit;">Impressum</a></p>
 </footer>
 
 </body>
