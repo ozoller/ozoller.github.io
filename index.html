@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melanie’s Massage Studio | Tamm</title>
+    <title>Wellness & Massage | Tamm</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -20,6 +20,7 @@
             padding: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
+            scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -52,9 +53,9 @@
             letter-spacing: 0.5px;
         }
 
-        /* Hero */
+        /* Hero Bereich */
         .hero {
-            height: 65vh;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -64,7 +65,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(40px, 8vw, 72px);
+            font-size: clamp(40px, 8vw, 68px);
             font-weight: 600;
             margin-bottom: 10px;
             letter-spacing: -0.03em;
@@ -74,24 +75,25 @@
             font-size: clamp(18px, 3vw, 24px);
             color: var(--secondary-text);
             max-width: 600px;
-            margin: 0 auto 30px;
+            margin: 0 auto 35px;
         }
 
         /* Sektionen */
         .section {
             max-width: 1000px;
-            margin: 0 auto 100px;
+            margin: 0 auto 80px;
             padding: 0 20px;
         }
 
         h2 {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 600;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
         }
 
-        /* Karten */
+        /* Leistungen Cards */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -99,90 +101,4 @@
         }
 
         .card {
-            background: var(--secondary-bg);
-            border-radius: 20px;
-            padding: 40px;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover { transform: scale(1.02); }
-        .card h3 { font-size: 22px; margin-top: 0; }
-        .card p { color: var(--secondary-text); line-height: 1.6; }
-        .card .price { font-weight: 600; margin-top: 20px; display: block; }
-
-        /* Button */
-        .btn {
-            display: inline-block;
-            background: var(--accent-color);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 980px;
-            text-decoration: none;
-            font-size: 17px;
-            transition: all 0.3s;
-        }
-
-        .btn:hover { opacity: 0.8; }
-
-        /* Kontakt & Footer */
-        footer {
-            background: var(--secondary-bg);
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .contact-card {
-            background: white;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-
-        .address-info {
-            color: var(--secondary-text);
-            margin: 20px 0;
-            line-height: 1.8;
-        }
-
-        .legal {
-            font-size: 12px;
-            color: var(--secondary-text);
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
-
-<nav>
-    <div class="nav-content">
-        <a href="#home">Home</a>
-        <a href="#angebot">Angebot</a>
-        <a href="#kontakt">Kontakt</a>
-    </div>
-</nav>
-
-<div class="hero" id="home">
-    <h1>Melanie’s Massage Studio</h1>
-    <p>Exklusive Entspannung in Tamm.</p>
-    <a href="#kontakt" class="btn">Termin vereinbaren</a>
-</div>
-
-<div class="section" id="angebot">
-    <h2>Angebote.</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Klassisch</h3>
-            <p>Tiefgehende Entspannung zur Regeneration von Körper und Geist.</p>
-            <span class="price">60 Min. — 65 €</span>
-        </div>
-        <div class="card">
-            <h3>Aromaöl</h3>
-            <p>Sanfte Massage mit hochwertigen Ölen für ein ganzheitliches Erlebnis.</p>
-            <span class="price">90 Min. — 90 €</span>
-        </div>
-        <div class="card">
-            <h3>Rücken</h3>
-            <p>Gezielte Behandlung von Verspannungen im Fokusbereich.</p>
-            <span class="price">30 Min. — 35
+            background: var(--
