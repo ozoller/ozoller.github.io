@@ -26,19 +26,19 @@
             color: var(--text-color);
             -webkit-font-smoothing: antialiased;
             text-align: center;
-            overflow-x: hidden; /* Verhindert seitliches Wackeln am Handy */
+            overflow-x: hidden;
         }
 
-        /* Navigation - Mobil optimiert */
+        /* Navigation mit Glas-Effekt (Milchglas) */
         nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.6); /* Transparenter für den Glas-Effekt */
+            backdrop-filter: blur(25px) saturate(180%); /* Der Apple-Glas-Filter */
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
         }
 
         .nav-content {
@@ -46,27 +46,28 @@
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            padding: 12px 5px;
+            padding: 16px 5px;
         }
 
         nav a {
             color: var(--text-color);
             text-decoration: none;
             font-size: 11px;
-            margin: 0 10px;
-            opacity: 0.8;
-            letter-spacing: 0.3px;
+            margin: 0 12px;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+            font-weight: 500;
             text-transform: uppercase;
         }
 
-        /* Sektionen - Höhe für Mobilgeräte angepasst */
+        /* Sektionen */
         section {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 100px 25px; /* Mehr Seitenabstand für Mobil */
+            padding: 100px 25px;
             box-sizing: border-box;
             width: 100%;
         }
@@ -89,7 +90,7 @@
         }
 
         h1 {
-            font-size: clamp(32px, 10vw, 60px); /* Größere Schrift auf kleinen Bildschirmen */
+            font-size: clamp(32px, 10vw, 60px);
             font-weight: 600;
             margin-bottom: 15px;
             letter-spacing: -0.04em;
@@ -111,7 +112,7 @@
             margin-bottom: 30px;
         }
 
-        /* Button - Größer für Touch-Bedienung */
+        /* Button */
         .btn {
             display: inline-block;
             background: var(--accent-color);
@@ -127,9 +128,10 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        .btn:hover { transform: scale(1.03); }
         .btn:active { transform: scale(0.96); }
 
-        /* Kontaktbox - Mobil angepasst */
+        /* Kontaktbox */
         #booking-box {
             display: none;
             margin: 30px auto 0 auto;
@@ -155,7 +157,6 @@
             width: 100%;
         }
 
-        /* Spezial-Korrektur für sehr kleine Handys */
         @media (max-width: 350px) {
             nav a { margin: 0 5px; font-size: 10px; }
             h1 { font-size: 28px; }
@@ -176,7 +177,7 @@
 <section id="hero">
     <div class="reveal">
         <h1>Mehr als Entspannung.<br>Wohlbefinden für Ihren Körper.</h1>
-        <p class="sub-text">Melanie’s Massage Studio in Tamm.<br>Gezielte Behandlung von Beschwerden und Blockaden.</p>
+        <p class="sub-text">Melanie’s Massage Studio in Tamm.<br>Entspannung und gezielte Behandlung von Beschwerden.</p>
         <a href="#massage" class="btn">Angebot ansehen</a>
     </div>
 </section>
