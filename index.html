@@ -29,10 +29,10 @@
             overflow-x: hidden;
         }
 
-        /* Navigation mit Glas-Effekt (Milchglas) */
+        /* Navigation mit Glas-Effekt */
         nav {
-            background: rgba(255, 255, 255, 0.6); /* Transparenter für den Glas-Effekt */
-            backdrop-filter: blur(25px) saturate(180%); /* Der Apple-Glas-Filter */
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
             position: fixed;
             top: 0;
@@ -148,6 +148,12 @@
             line-height: 1.7;
         }
 
+        .tel-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
         footer {
             padding: 40px 20px;
             font-size: 10px;
@@ -216,7 +222,7 @@
             <div class="address-details">
                 <p><strong>Melanie’s Massage Studio</strong><br>
                 Alleenstraße 91, 71732 Tamm</p>
-                <p>E-Mail:<br><a href="mailto:melaniezoller@hotmail.com" style="color:var(--accent-color); text-decoration:none;">melaniezoller@hotmail.com</a></p>
+                <p>Telefon: <br><a href="tel:+4915121216676" class="tel-link">+49 151 21216676</a></p>
             </div>
         </div>
     </div>
