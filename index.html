@@ -94,18 +94,20 @@
             margin-bottom: 30px;
         }
 
-        .price-info {
+        .service-list {
             font-size: 19px;
-            font-weight: 600;
-            margin-bottom: 20px;
+            line-height: 1.8;
             color: var(--text-color);
+            margin-bottom: 30px;
+            font-weight: 400;
         }
 
-        .service-list {
-            font-size: 18px;
-            line-height: 2;
-            color: var(--secondary-text);
-            margin-bottom: 40px;
+        .price-tag {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+            color: var(--accent-color);
+            letter-spacing: 0.5px;
         }
 
         .btn {
@@ -144,8 +146,7 @@
 <nav>
     <div class="nav-content">
         <a href="#hero">Start</a>
-        <a href="#massage">Massagen</a>
-        <a href="#special">Spezial</a>
+        <a href="#massage">Angebot</a>
         <a href="#kontakt">Buchen</a>
     </div>
 </nav>
@@ -153,37 +154,30 @@
 <section id="hero">
     <div class="reveal">
         <h1>Mehr als Entspannung.<br>Wohlbefinden für Ihren Körper.</h1>
-        <p class="sub-text">Melanie’s Massage Studio.<br>Durchblutung fördern und Verspannungen und Beschwerden lösen in Tamm.</p>
+        <p class="sub-text">Melanie’s Massage Studio.<br>Durchblutung fördern & Verspannungen sowie Beschwerden lösen in Tamm.</p>
         <a href="#massage" class="btn">Angebot ansehen</a>
     </div>
 </section>
 
 <section id="massage" class="bg-grey">
     <div class="reveal">
-        <h2>Massagen.</h2>
-        <div class="price-info">30 Min. — 30 € | 40 Min. — 40 € | 60 Min. — 58 €</div>
+        <h2>Angebot & Anwendungen.</h2>
         <div class="service-list">
             Klassische Massage<br>
             Deep Tissue / Triggerpunkt Behandlung<br>
             Entspannungsmassage<br>
-            Sportmassage
-        </div>
-    </div>
-</section>
-
-<section id="special">
-    <div class="reveal">
-        <h2>Spezialbehandlungen.</h2>
-        <div class="service-list">
+            Sportmassage<br>
             Kieferbalance R.E.S.E.T.®<br>
             Dorn-Therapie<br>
             Schröpfmassage
         </div>
-        <p class="sub-text">Individuelle Techniken für Ihre Balance.</p>
+        <div class="price-tag">
+            30 Min. — 30 € | 40 Min. — 40 € | 60 Min. — 58 €
+        </div>
     </div>
 </section>
 
-<section id="kontakt" class="bg-grey">
+<section id="kontakt">
     <div class="reveal">
         <h2>Ihr Weg zur Besserung.</h2>
         <p class="sub-text">Termine nach individueller Vereinbarung.</p>
