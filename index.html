@@ -4,39 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Melanie’s Massage Studio | Tamm</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #ffffff;
-            --secondary-bg: #f5f5f7;
-            --text-color: #1d1d1f;
-            --accent-color: #0071e3;
-            --secondary-text: #86868b;
+            --bg-color: #fdfbf7; /* Sanftes Off-White */
+            --accent-soft: #e8ede5; /* Milder Salbei-Ton */
+            --text-main: #3a3a3a;
+            --text-light: #6d6d6d;
+            --cta-color: #8a9a5b; /* Beruhigendes Moosgrün */
+            --white: #ffffff;
         }
 
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-main);
             -webkit-font-smoothing: antialiased;
             text-align: center;
             overflow-x: hidden;
         }
 
-        /* Glas-Navigation */
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        /* Navigation - Dezenter & Naturverbunden */
         nav {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            background: rgba(253, 251, 247, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
+            border-bottom: 1px solid rgba(138, 154, 91, 0.1);
         }
 
         .nav-content {
@@ -44,19 +51,21 @@
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            padding: 16px 5px;
+            padding: 18px 5px;
         }
 
         nav a {
-            color: var(--text-color);
+            color: var(--text-main);
             text-decoration: none;
-            font-size: 11px;
-            margin: 0 12px;
-            opacity: 0.9;
-            letter-spacing: 0.5px;
-            font-weight: 500;
+            font-size: 12px;
+            margin: 0 15px;
+            opacity: 0.7;
+            letter-spacing: 1px;
             text-transform: uppercase;
+            transition: opacity 0.3s;
         }
+
+        nav a:hover { opacity: 1; }
 
         section {
             min-height: 100vh;
@@ -69,76 +78,91 @@
             width: 100%;
         }
 
-        .bg-grey { background-color: var(--secondary-bg); }
+        .bg-soft { background-color: var(--accent-soft); }
 
         .reveal {
             opacity: 0;
             transform: translateY(20px);
-            transition: all 0.6s ease-out;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            transition: all 0.9s ease-out;
+            max-width: 800px;
             width: 100%;
         }
 
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        h1 { font-size: clamp(32px, 10vw, 60px); font-weight: 600; margin-bottom: 15px; letter-spacing: -0.04em; line-height: 1.1; }
-        h2 { font-size: clamp(28px, 8vw, 48px); font-weight: 600; margin-bottom: 15px; line-height: 1.2; }
+        h1 { font-size: clamp(34px, 8vw, 56px); margin-bottom: 20px; line-height: 1.2; }
+        h2 { font-size: clamp(28px, 6vw, 42px); margin-bottom: 25px; }
 
         .sub-text {
-            font-size: clamp(16px, 4.5vw, 20px);
-            color: var(--secondary-text);
-            max-width: 650px;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            font-size: clamp(16px, 4vw, 19px);
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        /* Leistungsliste Design */
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 40px 40px 5px 5px; /* Weiche organische Form */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 500px;
         }
 
         .service-list {
-            font-size: 19px;
-            line-height: 1.8;
-            color: var(--text-color);
+            font-size: 18px;
+            line-height: 2.2;
             margin-bottom: 30px;
-            font-weight: 400;
+            color: var(--text-main);
         }
 
         .price-tag {
-            font-size: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--cta-color);
+            border-top: 1px solid var(--accent-soft);
+            padding-top: 20px;
             font-weight: 600;
-            margin-top: 10px;
-            color: var(--accent-color);
-            letter-spacing: 0.5px;
         }
 
+        /* Button - Natürlicher Look */
         .btn {
             display: inline-block;
-            background: var(--accent-color);
+            background: var(--cta-color);
             color: white;
-            padding: 18px 40px;
-            border-radius: 980px;
+            padding: 16px 45px;
+            border-radius: 50px;
             text-decoration: none;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 500;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            -webkit-tap-highlight-color: transparent;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(138, 154, 91, 0.2);
         }
 
-        .btn:active { transform: scale(0.96); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(138, 154, 91, 0.3); }
 
+        /* Kontaktbox */
         #booking-box {
             display: none;
-            margin: 30px auto 0 auto;
-            padding: 30px 20px;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-            width: 90%;
+            margin-top: 30px;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 20px;
+            width: 100%;
             max-width: 400px;
+            border: 1px solid var(--accent-soft);
         }
 
-        footer { padding: 40px 20px; font-size: 10px; color: var(--secondary-text); text-transform: uppercase; letter-spacing: 1px; }
+        footer { padding: 60px 20px 30px; font-size: 10px; color: var(--text-light); letter-spacing: 1px; }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 32px; }
+            .service-card { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -146,54 +170,54 @@
 <nav>
     <div class="nav-content">
         <a href="#hero">Start</a>
-        <a href="#massage">Angebot</a>
-        <a href="#kontakt">Buchen</a>
+        <a href="#angebot">Angebot</a>
+        <a href="#kontakt">Termin</a>
     </div>
 </nav>
 
 <section id="hero">
     <div class="reveal">
         <h1>Mehr als Entspannung.<br>Wohlbefinden für Ihren Körper.</h1>
-        <p class="sub-text">Melanie’s Massage Studio.<br>Durchblutung fördern & Verspannungen sowie Beschwerden lösen in Tamm.</p>
-        <a href="#massage" class="btn">Angebot ansehen</a>
+        <p class="sub-text">Melanie’s Massage Studio in Tamm.<br>Durchblutung fördern & Verspannungen sowie Beschwerden lösen.</p>
+        <a href="#angebot" class="btn">Angebot entdecken</a>
     </div>
 </section>
 
-<section id="massage" class="bg-grey">
+<section id="angebot" class="bg-soft">
     <div class="reveal">
-        <h2>Angebot & Anwendungen.</h2>
-        <div class="service-list">
-            Klassische Massage<br>
-            Deep Tissue / Triggerpunkt Behandlung<br>
-            Entspannungsmassage<br>
-            Sportmassage<br>
-            Kieferbalance R.E.S.E.T.®<br>
-            Dorn-Therapie<br>
-            Schröpfmassage
-        </div>
-        <div class="price-tag">
-            30 Min. — 30 € | 40 Min. — 40 € | 60 Min. — 58 €
+        <h2>Angebot & Anwendungen</h2>
+        <div class="service-card">
+            <div class="service-list">
+                Klassische Massage<br>
+                Deep Tissue / Triggerpunkt<br>
+                Entspannungsmassage<br>
+                Sportmassage<br>
+                Kieferbalance R.E.S.E.T.®<br>
+                Dorn-Therapie<br>
+                Schröpfmassage
+            </div>
+            <div class="price-tag">
+                30 Min. 30€ | 40 Min. 40€ | 60 Min. 58€
+            </div>
         </div>
     </div>
 </section>
 
 <section id="kontakt">
     <div class="reveal">
-        <h2>Ihr Weg zur Besserung.</h2>
-        <p class="sub-text">Termine nach individueller Vereinbarung.</p>
-        <button class="btn" onclick="revealAddress()">Termin vereinbaren</button>
+        <h2>Zeit für Regeneration</h2>
+        <p class="sub-text">Individuelle Termine nach Vereinbarung.</p>
+        <button class="btn" onclick="revealAddress()">Termin anfragen</button>
 
         <div id="booking-box">
-            <div class="address-details">
-                <p><strong>Melanie’s Massage Studio</strong><br>
-                71732 Tamm</p>
-                <p>Telefon: <br><a href="tel:+4915121216676" style="color:var(--accent-color); text-decoration:none; font-weight:600;">+49 151 21216676</a></p>
-            </div>
+            <p><strong>Melanie’s Massage Studio</strong><br>
+            71732 Tamm</p>
+            <p>Telefon:<br><a href="tel:+4915121216676" style="color:var(--cta-color); text-decoration:none; font-weight:600;">+49 151 21216676</a></p>
         </div>
     </div>
 
     <footer>
-        MELANIE'S MASSAGE STUDIO &copy; 2026 | <a href="#" style="color:inherit; text-decoration:none;">Impressum</a>
+        &copy; 2026 MELANIE'S MASSAGE STUDIO | <a href="#" style="color:inherit; text-decoration:none;">IMPRESSUM</a>
     </footer>
 </section>
 
